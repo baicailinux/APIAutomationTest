@@ -1,0 +1,5 @@
+pytest==3.5.0
+pytest-allure-adaptor==1.7.10
+requests==2.18.4
+PyMySQL==0.8.0
+assertpy==0.13
