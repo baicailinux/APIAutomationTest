@@ -29,7 +29,7 @@ def addUUID(source):
     """
     return source+'_'+str(uuid.uuid4())
 
-def objectToJson(object):
+def objectToJsonStr(object):
     """
     将类对象转为json字符串
     :param object:

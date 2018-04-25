@@ -27,11 +27,16 @@ def isFilesEqual(filePath1,filePath2):
     else:
         return False
 
-def isFilesSizeEqual(filePath1,filePaht2):
+def isFilesSizeEqual(filePath1,filePath2):
     """
     比较两个文件大小是否一致
     :param filePath1:
     :param filePaht2:
     :return:
     """
-    return isEqual(os.path.getsize(filePath1),os.path.getsize(filePaht2))
+    size1=os.path.getsize(filePath1)
+    size2=os.path.getsize(filePath2)
+    if size1==size2:
+        return True
+    else:
+        return False

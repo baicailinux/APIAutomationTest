@@ -36,6 +36,7 @@
 * cases 测试用例目录
 * common 公共模块
 * config　配置文件
+* init 初始化
 * logs 日志目录
 * output 测试结果输出目录 
 * pojo 存放自定义类对象
