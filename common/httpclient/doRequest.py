@@ -29,6 +29,7 @@ class DoRequest(object):
                         proxies=self._proxies)
         return self._dealResponseResult(r)
 
+
     def post_with_file(self,path,filePath,params=None):
         files = {'file': open(filePath, 'rb')}
         r = self._session.post(self._url+path, data=params, files=files,headers=self._headers, cookies=self._cookies,

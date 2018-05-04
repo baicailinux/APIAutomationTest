@@ -19,11 +19,16 @@
 
 ### 3、安装JDK1.8
 
+### 4、安装openjdk8
+* sudo add-apt-repository ppa:openjdk-r/ppa
+* sudo apt-get update
+* sudo apt-get install openjdk-8-jdk
+
 ## 二、运行测试
 * cd APIAutomationTest/
 * python runTest.py --help
 * python runTest.py 运行cases目录所有的用例
-* python runTest.py -k keyword 运行匹配关键字的用例
+* python runTest.py -k keyword 运行匹配关键字的用例，会匹配文件名、类名、方法名
 * python runTest.py -d dir     运行指定目录的用例
 
 ## 三、生成测试报告

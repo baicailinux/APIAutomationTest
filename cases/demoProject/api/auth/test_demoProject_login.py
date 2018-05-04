@@ -32,7 +32,7 @@ class TestLogin():
         assert_that(status_code).is_equal_to(403)
         assert_that(body).contains('admin')
 
-    @pytest.mark.skip(reason='空密码前端做校验')
+    @pytest.mark.skip(reason=u'空密码前端做校验')
     def test_empty_password_login(self,demoProjectClient):
         params=self.generateParams(demoProjectClient.csrftoken,'admin','','admin','')
         httpResponseResult=demoProjectClient.doRequest.post_with_form(self._login_path,params=params)
@@ -41,7 +41,7 @@ class TestLogin():
         assert_that(status_code).is_equal_to(403)
         assert_that(body).contains('admin')
 
-    fail_data=[('11111','1111'),('admin',''),('',''),('中文用户名','中文密码')]
+    fail_data=[('11111','1111'),('admin',''),('',''),(u'中文用户名',u'中文密码')]
     @pytest.mark.parametrize('username,password',fail_data)
     def test_with_params_fail_login(self,username,password,demoProjectClient):
         params = self.generateParams(demoProjectClient.csrftoken, username, password, username, password)
@@ -50,7 +50,6 @@ class TestLogin():
         body=httpResponseResult.body
         assert_that(status_code).is_equal_to(403)
         assert_that(body).contains('admin')
-
 
     def teardown_class(self):
         pass
