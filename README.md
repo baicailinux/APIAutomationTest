@@ -60,15 +60,11 @@
 * 所有的测试模块文件都以test_projectName_moduleName.py命名
 * 所有的测试类都以Test开头，类中方法(用例)都以test_开头
 * 每个测试项目都在cases目录里创建一个目录，且目录都包含有api、scenrarios两个目录
-* 所有的fixture方法都统一写到cases/conftest.py，pytest会自动发现无需再引入所需的模块
 
 # [pytest常用]()
 * @pytest.mark.skip(reason='该功能已废弃')
 * @pytest.mark.parametrize('key1,key2',[(key1_value1,key2_value2),(key1_value2,key2_value2)])
 * @pytest.mark.usefixture('func_name')
-
-# [注意点]()
-* 运行pytest时指定的目录内应当有conftest.py，方能在其他模块中使用。@allure.step会影响fixture，故在脚本中不使用@allure.step
 
 
 

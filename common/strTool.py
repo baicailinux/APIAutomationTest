@@ -5,7 +5,7 @@ import json
 class StrTool():
 
     @classmethod
-    def getStringWithLBRB(cls,sourceStr,lbStr,rbStr,offset=0):
+    def getStringWithLBRB(cls, sourceStr, lbStr, rbStr, offset=0):
         """
         根据字符串左右边界获取内容
         offset:要获得匹配的第几个数据,默认第一个
@@ -15,13 +15,16 @@ class StrTool():
         :param offset:
         :return:
         """
-        regex='([\\s\\S]*?)'
-        r=re.compile(lbStr+regex+rbStr)
-        result=r.findall(sourceStr)
+        regex = '([\\s\\S]*?)'
+        r = re.compile(lbStr + regex + rbStr)
+        result = r.findall(sourceStr)
         if str(offset) == 'all':
             return result
         else:
-            return result[offset]
+            if len(result) >= offset and len(result) != 0:
+                return result[offset]
+            else:
+                return None
 
     @classmethod
     def addUUID(cls,source):
