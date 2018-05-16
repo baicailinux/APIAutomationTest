@@ -37,7 +37,7 @@
 * python runTest.py -k keyword 运行匹配关键字的用例，会匹配文件名、类名、方法名
 * python runTest.py -d dir     运行指定目录的用例
 
-## 三、生成测试报告
+## 四、生成测试报告
 * cd APIAutomationTest/
 * python generateReport.py 
 * 访问地址http://ip:9080
