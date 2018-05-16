@@ -27,8 +27,8 @@
 * sudo apt-get install openjdk-8-jdk
 
 ## 二、修改配置
-* vim config/init.int 配置需要初始化的项目
-* vim config/projectName.init 配置测试项目的信息
+* vim config/init.ini 配置需要初始化的项目
+* vim config/projectName.ini 配置测试项目的信息
 
 ## 三、运行测试
 * cd APIAutomationTest/
