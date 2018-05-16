@@ -26,7 +26,11 @@
 * sudo apt-get update
 * sudo apt-get install openjdk-8-jdk
 
-## 二、运行测试
+## 二、修改配置
+* vim config/init.int 配置需要初始化的项目
+* vim config/projectName.init 配置测试项目的信息
+
+## 三、运行测试
 * cd APIAutomationTest/
 * python runTest.py --help
 * python runTest.py 运行cases目录所有的用例
