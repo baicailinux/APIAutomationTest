@@ -10,7 +10,6 @@ if __name__=='__main__':
     parser.add_argument('-d','--dir',help='指定要测试的目录',type=str)
     args=parser.parse_args()
 
-
     #初始化
     print '开始初始化......'
     init()
