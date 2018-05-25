@@ -1,8 +1,8 @@
 #-*- coding:utf8
 from init.init import init
-from common.logger import apilogger
 import argparse
 import pytest
+import sys
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
@@ -20,14 +20,16 @@ if __name__=='__main__':
     print '开始测试......'
     keyword=None
     dir='cases/'
+    exit_code=None
     if args.keyword:
         keyword=args.keyword
         if args.dir:
             dir=args.dir
-        pytest.main(['-c','config/pytest.ini','-v','--alluredir','output/','-k',keyword,dir])
+        exit_code=pytest.main(['-c','config/pytest.ini','-v','--alluredir','output/','-k',keyword,dir])
         #pytest.main(['-c', 'config/pytest.ini', '-v','--show-capture', 'no', '--alluredir', 'output/', '-k', keyword, dir])
     else:
         if args.dir:
             dir=args.dir
-        pytest.main(['-c', 'config/pytest.ini','-v','--alluredir', 'output/', dir])
+        exit_code=pytest.main(['-c', 'config/pytest.ini','-v','--alluredir', 'output/', dir])
         #pytest.main(['-c', 'config/pytest.ini', '-v','--show-capture', 'no', '--alluredir', 'output/', dir])
+    sys.exit(exit_code)
