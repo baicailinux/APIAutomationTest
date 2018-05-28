@@ -9,6 +9,14 @@ class TestLogin():
         self._demoProjectClient=DemoProjectClient()
         self._login_path='/horizon/auth/login/'
 
+    @pytest.fixture
+    def fixture_test_success_login(self):
+        #setup
+        print 'this is a setup'
+        #teardown
+        yield self.fixture_test_success_login
+        print 'this is a teardown'
+
     def generateParams(self,csrfmiddlewaretoken,username,password,fake_email,fake_password):
         params={}
         params.update({"csrfmiddlewaretoken":csrfmiddlewaretoken})
