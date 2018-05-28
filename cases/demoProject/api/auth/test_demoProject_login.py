@@ -26,7 +26,7 @@ class TestLogin():
         params.update({"fake_password": fake_password})
         return params
 
-    def test_success_login(self):
+    def test_success_login(self,fixture_test_success_login):
         params=self.generateParams(self._demoProjectClient.csrftoken,'admin','admin','admin','admin')
         httpResponseResult=self._demoProjectClient.doRequest.post_with_form(self._login_path,params=params)
         status_code=httpResponseResult.status_code
