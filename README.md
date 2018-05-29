@@ -64,6 +64,7 @@
 * 所有的测试模块文件都以test_projectName_moduleName.py命名
 * 所有的测试类都以Test开头，类中方法(用例)都以test_开头
 * 每个测试项目都在cases目录里创建一个目录，且目录都包含有api、scenrarios两个目录
+* case对应setup/teardown的fixture统一命名成fixture_[test_case_method_name]
 
 # [pytest常用]()
 * @pytest.mark.skip(reason='该功能已废弃')
