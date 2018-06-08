@@ -39,7 +39,7 @@
 
 ## 四、生成测试报告
 * cd APIAutomationTest/
-* python generateReport.py 
+* python generateReport.py -p 9080 
 * 访问地址http://ip:9080
 
 # [项目结构]()
