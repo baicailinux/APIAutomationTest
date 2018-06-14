@@ -19,9 +19,7 @@
 * sudo apt-get install allure
 * 其他安装方式：https://github.com/allure-framework/allure2
 
-### 3、安装JDK1.8
-
-### 4、安装openjdk8
+### 3、安装openjdk8
 * sudo add-apt-repository ppa:openjdk-r/ppa
 * sudo apt-get update
 * sudo apt-get install openjdk-8-jdk
