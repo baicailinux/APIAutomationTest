@@ -1,4 +1,4 @@
-#-*- coding:utf8
+#-*- coding:utf8 -*-
 from init.init import init
 import argparse
 import pytest
@@ -8,27 +8,31 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('-k','--keyword',help='只执行匹配关键字的用例，会匹配文件名、类名、方法名',type=str)
     parser.add_argument('-d','--dir',help='指定要测试的目录',type=str)
+    parser.add_argument('-s','--scenrario',help='是否运行场景测试，1代表运行，0代表不运行，默认为不运行',type=str)
     args=parser.parse_args()
 
-    #初始化
+    # 初始化
     print '开始初始化......'
     init()
     print '初始化完成......'
 
-    #执行pytest
-    print '开始测试......'
-    keyword=None
-    dir='cases/'
-    exit_code=None
+    # 执行pytest前的参数准备
+    pytest_execute_params=['-c', 'config/pytest.ini', '-v', '--alluredir', 'output/']
+    # 判断目录参数
+    dir = 'cases'
+    if args.dir:
+        dir=args.dir
+    # 判断关键字参数
     if args.keyword:
-        keyword=args.keyword
-        if args.dir:
-            dir=args.dir
-        exit_code=pytest.main(['-c','config/pytest.ini','-v','--alluredir','output/','-k',keyword,dir])
-        #pytest.main(['-c', 'config/pytest.ini', '-v','--show-capture', 'no', '--alluredir', 'output/', '-k', keyword, dir])
-    else:
-        if args.dir:
-            dir=args.dir
-        exit_code=pytest.main(['-c', 'config/pytest.ini','-v','--alluredir', 'output/', dir])
-        #pytest.main(['-c', 'config/pytest.ini', '-v','--show-capture', 'no', '--alluredir', 'output/', dir])
+        pytest_execute_params.append('-k')
+        pytest_execute_params.append(args.keyword)
+    # 判断场景参数
+    if args.scenrario=='1':
+        pytest_execute_params.append('-m')
+        pytest_execute_params.append('scenrario')
+
+    pytest_execute_params.append(dir)
+
+    print '开始测试......'
+    exit_code=pytest.main(pytest_execute_params)
     sys.exit(exit_code)
