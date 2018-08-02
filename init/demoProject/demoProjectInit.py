@@ -1,27 +1,8 @@
 #-*- coding:utf8 -*-
-from pojo.demoProjectConfig import DemoProjectConfig
-import ConfigParser
 
 class DemoProjectInit():
     def __init__(self):
-        self._demoProjectConfig=self._readConfig('config/demoProjectInit.ini')
-
-
-    def getDemoProjectConfig(self):
-        return self._demoProjectConfig
-
-    def _readConfig(self,configFile):
-        config = ConfigParser.ConfigParser()
-        config.read(configFile)
-        demoProjectConfig=DemoProjectConfig()
-        demoProjectConfig.url=config.get('servers','url')
-        demoProjectConfig.adminUser=config.get('users','adminUser')
-        demoProjectConfig.adminUserPassword = config.get('users', 'adminUserPassword')
-        demoProjectConfig.normalUser=config.get('users','normalUser')
-        demoProjectConfig.normalUserPassword=config.get('users','normalUserPassword')
-        demoProjectConfig.closeUser=config.get('users','closeUser')
-        demoProjectConfig.closeUserPassword=config.get('users','closeUserPassword')
-        return demoProjectConfig
+        pass
 
     def init(self):
         #每次测试前先清除上次构造的数据

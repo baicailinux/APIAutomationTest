@@ -1,5 +1,6 @@
 # -*- coding:utf8 -*-
-from init.demoProject.demoProjectInit import DemoProjectInit
+from base.demoProject.demoProjectReadConfig import DemoProjectReadConfig
+from base.demoProject.demoProjectDBClients import DemoProjectDBClients
 from common.httpclient.doRequest import DoRequest
 from common.strTool import StrTool
 
@@ -14,7 +15,8 @@ class DemoProjectClient(object):
 
     def __init__(self):
         if self.__inited is None:
-            self.demoProjectConfig=DemoProjectInit().getDemoProjectConfig()
+            self.demoProjectConfig=DemoProjectReadConfig().config
+            self.demoProjectDBClients=DemoProjectDBClients()
             self.doRequest=DoRequest(self.demoProjectConfig.url)
             self.csrftoken=self._initCsrftoken()
 
