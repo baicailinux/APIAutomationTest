@@ -72,3 +72,9 @@ class DoRequest(object):
         httpResponseResult.cookies=r.cookies.__str__()
         httpResponseResult.body=r.content
         return httpResponseResult
+
+    def clearCookies(self):
+        self._session.cookies.clear()
+
+    def closeSession(self):
+        self._session.close()
