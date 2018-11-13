@@ -72,6 +72,3 @@
 
 # [注意点]()
 * 运行pytest时指定的目录内应当有conftest.py，方能在其他模块中使用。@allure.step会影响fixture，故在脚本中不使用@allure.step
-
-# [打赏]()
-![avatar](https://github.com/yanchunhuo/resources/blob/master/Alipay.jpg)
