@@ -1,13 +1,15 @@
 # -*- coding:utf-8 -*-
 from base.demoProject.demoProjectReadConfig import DemoProjectReadConfig
 from common.mysqlclient.mysqlclient import MysqlClient
+
+
 class DemoProjectDBClients(object):
-    __instance=None
-    __inited=None
+    __instance = None
+    __inited = None
 
     def __new__(cls, *args, **kwargs):
         if cls.__instance is None:
-            cls.__instance=object.__new__(cls)
+            cls.__instance = object.__new__(cls)
         return cls.__instance
 
     def __init__(self):
@@ -15,4 +17,4 @@ class DemoProjectDBClients(object):
             self._demoProjectConfig = DemoProjectReadConfig().config
             # self.mysqlclient=MysqlClient('host','port','username','password','dbname')
             # self.oracleclient = OracleClient('host', 'port', 'username', 'password', 'dbname')
-            self.__inited=True
+            self.__inited = True

@@ -2,6 +2,8 @@
 import re
 import uuid
 import json
+
+
 class StrTool():
 
     @classmethod
@@ -27,16 +29,16 @@ class StrTool():
                 return None
 
     @classmethod
-    def addUUID(cls,source):
+    def addUUID(cls, source):
         """
         字符串加上uuid
         :param source:
         :return:
         """
-        return source+'_'+str(uuid.uuid4())
+        return source + '_' + str(uuid.uuid4())
 
     @classmethod
-    def objectToJsonStr(cls,object):
+    def objectToJsonStr(cls, object):
         """
         将类对象转为json字符串
         :param object:

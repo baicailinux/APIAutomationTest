@@ -1,6 +1,7 @@
-#-*- coding:utf8 -*-
+# -*- coding:utf8 -*-
 from demoProject.demoProjectInit import DemoProjectInit
 import ConfigParser
+
 
 def init():
     """
@@ -10,6 +11,6 @@ def init():
     config = ConfigParser.ConfigParser()
     config.read('config/init.ini')
 
-    #初始化demoProject项目基础数据
-    if 1==int(config.get('isInit','demoProject')):
+    # 初始化demoProject项目基础数据
+    if 1 == int(config.get('isInit', 'demoProject')):
         DemoProjectInit().init()
